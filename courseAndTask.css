@@ -27,10 +27,23 @@ body {
   margin-bottom: 20px;
 }
 
-input {
+input,
+select {
   padding: 8px;
   margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: #fff;
+  outline: none;
 }
+
+input:focus,
+select:focus {
+  border-color: #4a90e2;
+}
+
 
 button {
   padding: 8px 12px;
