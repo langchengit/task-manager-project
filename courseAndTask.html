@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Course & Task Manager</title>
+  <link rel="stylesheet" href="courseAndTask.css" />
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- LEFT: Main Content -->
+    <div class="main">
+      <h1>My Courses & Projects</h1>
+
+      <div class="add-course">
+        <input id="courseInput" placeholder="Add course or project..." />
+        <button onclick="addCourse()">Add</button>
+      </div>
+
+      <div id="courseGallery" class="gallery"></div>
+
+      <div id="taskSection" class="hidden">
+        <h2 id="taskTitle"></h2>
+
+        <div class="add-task">
+          <input id="taskInput" placeholder="Task description..." />
+          <input id="dueDateInput" type="date" />
+
+          <select id="statusInput">
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+
+          <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <button class="back-btn" onclick="goBack()">← Back</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: Sorted Task Panel -->
+    <div class="sidebar">
+      <h2>Upcoming Tasks</h2>
+      <ul id="sortedTaskList"></ul>
+    </div>
+
+  </div>
+
+  <script src="courseAndTask.js"></script>
+</body>
+</html>

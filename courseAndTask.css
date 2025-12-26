@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main {
+  flex: 3;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 20px;
+  background: #ffffff;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.add-course, .add-task {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  margin-right: 5px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+}
+
+.course-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+li {
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+
+.task-date {
+  font-size: 0.85em;
+  color: #555;
+}
+
+.task-course {
+  font-size: 0.8em;
+  color: #777;
+}
+
+.back-btn {
+  margin-top: 15px;
+}
