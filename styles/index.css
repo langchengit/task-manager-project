@@ -1,0 +1,15 @@
+.mainNav li {
+  display: inline;
+  margin-right: 15px;
+  background-color: #f5f7fa;
+}
+
+.mainNav button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid black;
+}

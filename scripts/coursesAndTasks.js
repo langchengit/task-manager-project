@@ -1,6 +1,21 @@
 let courses = JSON.parse(localStorage.getItem("courses")) || {};
 let currentCourse = null;
 
+function loadWindow(name) {
+  fetch(`${name}.html`)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("windowContainer").innerHTML = html;
+
+      if (name === "coursesAndTasks") {
+        renderGallery();
+        renderSortedTasks();
+      }
+    });
+}
+
+
+
 function saveData() {
   localStorage.setItem("courses", JSON.stringify(courses));
   renderSortedTasks();
@@ -160,6 +175,6 @@ function goBack() {
   document.getElementById("courseGallery").classList.remove("hidden");
 }
 
-// Initial load
-renderGallery();
-renderSortedTasks();
+// // Initial load
+// renderGallery();
+// renderSortedTasks();
