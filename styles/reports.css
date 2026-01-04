@@ -1,0 +1,9 @@
+#timePieChart {
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto;  /* center it */
+}
+
+body {
+  background-color: #f5f7fa;
+}

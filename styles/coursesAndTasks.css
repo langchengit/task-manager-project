@@ -23,6 +23,11 @@ body {
   overflow-y: auto;
 }
 
+.add-course {
+  display: flex;
+  gap: 20px;
+}
+
 .add-course, .add-task {
   margin-bottom: 20px;
 }
@@ -92,4 +97,12 @@ li {
 
 .back-btn {
   margin-top: 15px;
+}
+
+#courseColorInput {
+  height: 36px;
+  width: 50px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
 }

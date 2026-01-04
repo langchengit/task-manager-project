@@ -23,7 +23,7 @@ function loadTasks(course) {
   const taskSelect = document.getElementById("taskSelect");
   taskSelect.innerHTML = `<option value="">Select Task</option>`;
 
-  courses[course].forEach((task, index) => {
+  courses[course].tasks.forEach((task, index) => {
     const opt = document.createElement("option");
     opt.value = index;
     opt.textContent = task.text;
@@ -39,7 +39,7 @@ function startTimer() {
   pauseTimer();
 
   interval = setInterval(() => {
-    courses[activeCourse][activeTaskIndex].timeSpent++;
+    courses[activeCourse].tasks[activeTaskIndex].timeSpent++;
     saveData();
     updateDisplay();
   }, 1000);
@@ -55,13 +55,13 @@ function pauseTimer() {
 function resetTimer() {
   if (!activeCourse || activeTaskIndex === null) return;
 
-  courses[activeCourse][activeTaskIndex].timeSpent = 0;
+  courses[activeCourse].tasks[activeTaskIndex].timeSpent = 0;
   saveData();
   updateDisplay();
 }
 
 function updateDisplay() {
-  const seconds = courses[activeCourse][activeTaskIndex].timeSpent;
+  const seconds = courses[activeCourse].tasks[activeTaskIndex].timeSpent;
   document.getElementById("timerDisplay").textContent = formatTime(seconds);
 }
 

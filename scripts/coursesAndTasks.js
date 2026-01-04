@@ -25,12 +25,17 @@ function saveData() {
 
 function addCourse() {
   const input = document.getElementById("courseInput");
+  const colorInput = document.getElementById("courseColorInput");
   const name = input.value.trim();
 
   if (!name || courses[name]) return;
 
-  courses[name] = [];
+  courses[name] = {
+    color: colorInput.value, 
+    tasks: []
+  };
   input.value = "";
+  colorInput.value = "#4a90e2";
 
   saveData();
   renderGallery();
@@ -55,6 +60,7 @@ function openCourse(course) {
   currentCourse = course;
 
   document.getElementById("taskTitle").textContent = course;
+  document.getElementById("taskTitle").style.color = courses[course].color;
   document.getElementById("taskSection").classList.remove("hidden");
   document.getElementById("courseGallery").classList.add("hidden");
 
@@ -68,7 +74,7 @@ function addTask() {
 
   if (!text || !dueDate) return;
 
-  courses[currentCourse].push({
+  courses[currentCourse].tasks.push({
     text,
     dueDate,
     status,
@@ -89,7 +95,7 @@ function renderTasks() {
   const list = document.getElementById("taskList");
   list.innerHTML = "";
 
-  courses[currentCourse].forEach((task, index) => {
+  courses[currentCourse].tasks.forEach((task, index) => {
     const li = document.createElement("li");
 
     const statusSelect = document.createElement("select");
@@ -130,7 +136,7 @@ function renderSortedTasks() {
   const allTasks = [];
 
   for (let course in courses) {
-    courses[course].forEach((task, index) => {
+    courses[course].tasks.forEach((task, index) => {
       allTasks.push({ ...task, course, index });
     });
   }
@@ -150,8 +156,8 @@ function renderSortedTasks() {
       });
 
       statusSelect.onchange = () => {
-        courses[task.course][task.index].status = statusSelect.value;
-        courses[task.course][task.index].completed = statusSelect.value === "Completed";
+        courses[task.course].tasks[task.index].status = statusSelect.value;
+        courses[task.course].tasks[task.index].completed = statusSelect.value === "Completed";
         saveData();
         renderTasks();
       };
