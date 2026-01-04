@@ -4,12 +4,14 @@
   background-color: #f5f7fa;
 }
 
-.mainNav button {
+.mainNav a {
   background: none;
   border: none;
   color: black;
-  font-size: 16px;
   cursor: pointer;
   padding: 10px;
   border: 1px solid black;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
 }

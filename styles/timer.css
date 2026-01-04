@@ -1,5 +1,93 @@
-#clock {
-  font-family: monospace;
-  font-size: 2rem;
-  color: black;
+body {
+  background-color: #f5f7fa;
+}
+/* Root wrapper – prevents global bleed */
+
+.timer-page {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Timer card */
+.timer-page .timer-panel {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 360px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+/* Headings */
+.timer-page h1 {
+  margin-bottom: 20px;
+}
+
+.timer-page h2 {
+  font-size: 42px;
+  margin: 20px 0;
+  letter-spacing: 2px;
+}
+
+/* Inputs */
+.timer-page select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: #fff;
+}
+
+.timer-page select:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Buttons */
+.timer-page button {
+  padding: 10px 14px;
+  margin: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.timer-page button:hover {
+  opacity: 0.9;
+}
+
+.timer-page button:nth-of-type(1) {
+  background: #4caf50;
+  color: white;
+}
+
+.timer-page button:nth-of-type(2) {
+  background: #ff9800;
+  color: white;
+}
+
+.timer-page button:nth-of-type(3) {
+  background: #f44336;
+  color: white;
+}
+
+/* Back link */
+.timer-page a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #4a90e2;
+  font-size: 14px;
+}
+
+.timer-page a:hover {
+  text-decoration: underline;
 }

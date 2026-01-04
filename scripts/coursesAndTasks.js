@@ -72,7 +72,8 @@ function addTask() {
     text,
     dueDate,
     status,
-    completed: status === "Completed"
+    completed: status === "Completed",
+    timeSpent: 0
   });
 
   document.getElementById("taskInput").value = "";
@@ -175,6 +176,6 @@ function goBack() {
   document.getElementById("courseGallery").classList.remove("hidden");
 }
 
-// // Initial load
-// renderGallery();
-// renderSortedTasks();
+// Initial load
+renderGallery();
+renderSortedTasks();

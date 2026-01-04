@@ -4,10 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>timer</title>
+  <link rel="stylesheet" href="styles/nav.css">
   <link rel="stylesheet" href="styles/timer.css">
 </head>
 <body>
-  <div id="clock"></div>
+
+  <div class="mainNav">
+    <ul>
+      <li>
+        <a href="coursesAndTasks.html">Task Manager</a>
+        <a href="timer.html">Timer</a>
+        <a href="reports.html">Reports</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="timer-page">
+    
+    <div class="timer-panel">
+
+      <select id="courseSelect"></select>
+      <select id="taskSelect"></select>
+
+      <h2 id="timerDisplay">00:00:00</h2>
+
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+
+      <br /><br />
+      <a href="coursesAndTasks.html">← Back to Tasks</a>
+
+    </div>
+  </div>
+
   <script src="scripts/timer.js"></script>
 </body>
 </html>
