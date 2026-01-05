@@ -1,18 +1,18 @@
 let courses = JSON.parse(localStorage.getItem("courses")) || {};
 let currentCourse = null;
 
-function loadWindow(name) {
-  fetch(`${name}.html`)
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("windowContainer").innerHTML = html;
+// function loadWindow(name) {
+//   fetch(`${name}.html`)
+//     .then(res => res.text())
+//     .then(html => {
+//       document.getElementById("windowContainer").innerHTML = html;
 
-      if (name === "coursesAndTasks") {
-        renderGallery();
-        renderSortedTasks();
-      }
-    });
-}
+//       if (name === "taskmanager") {
+//         renderGallery();
+//         renderSortedTasks();
+//       }
+//     });
+// }
 
 
 
