@@ -64,10 +64,12 @@ button {
 .course-card {
   background: white;
   padding: 20px;
+  position: relative;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
 .course-card:hover {
@@ -105,4 +107,35 @@ li {
   padding: 0;
   border: none;
   cursor: pointer;
+}
+
+.delete-course-btn {
+  position: absolute;
+  border: none;
+  background-color: white;
+  right: 0;
+  bottom: 50%;
+  transform: translateY(50%);
+  height: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.delete-course-btn:hover {
+  background-color: rgb(255, 0, 0, 0.8);
+}
+
+.show-all-tasks-link {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.show-all-tasks-link:hover {
+  color: #4a90e2;
 }

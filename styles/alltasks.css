@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+}
+
+li {
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+
+li div {
+  line-height: 150%;
+}
+
+.task-date {
+  font-size: 0.85em;
+  color: #555;
+}
+
+.task-course {
+  font-size: 0.8em;
+  color: #777;
+}
+
+
+input,
+select {
+  padding: 8px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: #fff;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #4a90e2;
+}
+
+.go-back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  background-color: #4a90e2;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.go-back-btn:hover {
+  background-color: #357ab8;
+}

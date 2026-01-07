@@ -1,3 +1,4 @@
+
 let courses = JSON.parse(localStorage.getItem("courses")) || {};
 let currentCourse = null;
 
@@ -28,7 +29,14 @@ function addCourse() {
   const colorInput = document.getElementById("courseColorInput");
   const name = input.value.trim();
 
-  if (!name || courses[name]) return;
+  if(courses[name]) {
+    alert("Course already exists!");
+    return;
+  }
+  if (!name) {
+    alert("Course name cannot be empty!");
+    return;
+  }
 
   courses[name] = {
     color: colorInput.value, 
@@ -49,6 +57,17 @@ function renderGallery() {
     const card = document.createElement("div");
     card.className = "course-card";
     card.textContent = course;
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "delete-course-btn";
+    deleteBtn.textContent = "×";
+    card.appendChild(deleteBtn);
+    
+    deleteBtn.onclick = (e) => {
+      e.stopPropagation();
+      delete courses[course];
+      saveData();
+      renderGallery();
+    }
     card.onclick = () => openCourse(course);
     gallery.appendChild(card);
   }
@@ -173,6 +192,13 @@ function renderSortedTasks() {
         list.appendChild(li);
       }
     });
+
+    
+    const showAllTasks = document.createElement("a");
+    showAllTasks.textContent = "Show All Tasks";
+    showAllTasks.className = "show-all-tasks-link";
+    showAllTasks.href = "alltasks.html";
+    list.appendChild(showAllTasks);
 }
 
 // ---------- Navigation ----------
