@@ -53,6 +53,7 @@ select:focus {
   border-radius: 6px;
   margin-left: 10px;
   transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
 .go-back-btn:hover {
