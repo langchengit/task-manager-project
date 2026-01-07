@@ -115,6 +115,8 @@ function renderTasks() {
   list.innerHTML = "";
 
   courses[currentCourse].tasks.forEach((task, index) => {
+
+
     const li = document.createElement("li");
 
     const statusSelect = document.createElement("select");
@@ -140,6 +142,20 @@ function renderTasks() {
 
     if (!task.completed){
       li.appendChild(statusSelect);
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.className = "delete-task-btn";
+      deleteBtn.textContent = "×";
+      li.appendChild(deleteBtn);
+      
+      deleteBtn.onclick = (e) => {
+        e.stopPropagation();
+        courses[currentCourse].tasks.splice(index, 1);
+        renderTasks();
+        saveData();
+        renderGallery();
+      }
+
       list.appendChild(li);
     }
   });
