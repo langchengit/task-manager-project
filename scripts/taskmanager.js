@@ -203,7 +203,16 @@ function renderSortedTasks() {
         <div class="task-course">${task.course}</div>
       `;
 
+
       if(!task.completed) {
+        if(createDate(task.dueDate) < new Date()) {
+          const alertIcon = document.createElement("span");
+          alertIcon.className = "alert-icon";
+          alertIcon.title = "Overdue Task";
+          alertIcon.textContent = "⚠️";
+          li.querySelector("div").appendChild(alertIcon);
+        }
+
         li.appendChild(statusSelect);
         list.appendChild(li);
       }
@@ -215,6 +224,11 @@ function renderSortedTasks() {
     showAllTasks.className = "show-all-tasks-link";
     showAllTasks.href = "alltasks.html";
     list.appendChild(showAllTasks);
+}
+
+function createDate(dateStr) {
+  const parts = dateStr.split("-");
+  return new Date(parts[0], parts[1] - 1, parts[2]);
 }
 
 // ---------- Navigation ----------
