@@ -1,7 +1,20 @@
+
+
 .mainNav li {
-  display: inline;
+  display: flex;
   margin-right: 15px;
   background-color: #f5f7fa;
+  justify-content: space-between;
+}
+
+.mainNav .control {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.mainNav .account {
+  padding-right: 30px;
 }
 
 .mainNav a {
@@ -11,7 +24,7 @@
   cursor: pointer;
   padding: 10px;
   border: 1px solid black;
-  font-size: 14px;
+  font-size: 18px;
   font-family: Arial, sans-serif;
   text-decoration: none;
 }
