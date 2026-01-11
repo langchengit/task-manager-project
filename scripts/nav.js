@@ -12,6 +12,7 @@ function loadNav() {
 
         <div class="account">
           <a href="login.html">Login</a>
+          <img src="../images/logo.png" id="logo" img>
         </div>
       </li>
     </ul>

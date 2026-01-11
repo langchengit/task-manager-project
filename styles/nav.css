@@ -1,10 +1,13 @@
-
+.mainNav ul {
+  margin: 0;
+}
 
 .mainNav li {
   display: flex;
   margin-right: 15px;
   background-color: #f5f7fa;
   justify-content: space-between;
+  align-items: center;
 }
 
 .mainNav .control {
@@ -14,7 +17,14 @@
 }
 
 .mainNav .account {
-  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
 }
 
 .mainNav a {
