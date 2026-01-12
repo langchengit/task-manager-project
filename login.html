@@ -4,8 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
+  <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
-  
+
+  <img src="images/pieChart.png" class="piechart">
+  <img src="images/dashboard.png" class="dashboard">
+
+  <div class="login-container">
+    <div class="website-info">
+      <h2>Welcome to Task Manager</h2>
+      <img src="images/logo.png" class="logo">
+    </div>
+
+    <form>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <!-- From Uiverse.io by ryota1231 --> 
+    <button class="animated-button login-button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+        <path
+          d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+        ></path>
+      </svg>
+      <span class="text">L O G I N</span>
+      <span class="circle"></span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+        <path
+          d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+        ></path>
+      </svg>
+    </button>
+
+    </form>
+  </div>
+
 </body>
 </html>
