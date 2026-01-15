@@ -1,11 +1,12 @@
-timeSpentEachCourse = {};
-let courses = JSON.parse(localStorage.getItem("courses")) || {};
+let currentFolder = JSON.parse(localStorage.getItem("currentFolder")) || null;
+let timeSpentEachCourse = {};
+let courses = JSON.parse(localStorage.getItem("folders"))[currentFolder]?.courses || {};
 
 function calculateTimeSpentEachCourse() {
   
   for(let courseName in courses){
-    tasks = courses[courseName].tasks;
-    totalTime = 0;
+    let tasks = courses[courseName].tasks;
+    let totalTime = 0;
     tasks.forEach((task) => {
       totalTime += task.timeSpent;
     });

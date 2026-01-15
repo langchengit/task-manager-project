@@ -1,5 +1,10 @@
+let currentFolder = JSON.parse(localStorage.getItem("currentFolder")) || null;
 
-let courses = JSON.parse(localStorage.getItem("courses")) || {};
+let folders = JSON.parse(localStorage.getItem("folders")) || {};
+let courses = folders[currentFolder]?.courses || {};
+let timePerDay = JSON.parse(localStorage.getItem("timePerDay")) || {};
+
+console.log(courses);
 
 let activeCourse = null;
 let activeTaskIndex = null;
@@ -37,9 +42,15 @@ function startTimer() {
   if (!activeCourse || activeTaskIndex === null) return;
 
   pauseTimer();
+  
+  //change the background color to green
+
+  document.body.style.backgroundColor = 'green';
+
 
   interval = setInterval(() => {
     courses[activeCourse].tasks[activeTaskIndex].timeSpent++;
+    //add time to timePerDay
     saveData();
     updateDisplay();
   }, 1000);
@@ -49,6 +60,7 @@ function pauseTimer() {
   if (interval) {
     clearInterval(interval);
     interval = null;
+    document.body.style.backgroundColor = 'orange';
   }
 }
 
@@ -56,6 +68,7 @@ function resetTimer() {
   if (!activeCourse || activeTaskIndex === null) return;
 
   courses[activeCourse].tasks[activeTaskIndex].timeSpent = 0;
+  document.body.style.backgroundColor = 'red';
   saveData();
   updateDisplay();
 }
@@ -77,7 +90,8 @@ function formatTime(seconds) {
 // ---------- Storage ----------
 
 function saveData() {
-  localStorage.setItem("courses", JSON.stringify(courses));
+  localStorage.setItem("folders", JSON.stringify(folders));
+  localStorage.setItem("currentFolder", JSON.stringify(currentFolder));
 }
 
 // ---------- Event Listeners ----------
@@ -97,36 +111,6 @@ document.getElementById("taskSelect").addEventListener("change", e => {
 // ---------- Init ----------
 loadCourses(); 
 
-console.log(courses);
-
-
-
-
-// function updateClock() {
-//   const now = new Date();
-
-//   let hours = now.getHours();
-//   let minutes = now.getMinutes();
-//   let seconds = now.getSeconds();
-
-//   // Add leading zeros
-//   hours = String(hours).padStart(2, "0");
-//   minutes = String(minutes).padStart(2, "0");
-//   seconds = String(seconds).padStart(2, "0");
-
-//   document.getElementById("clock").textContent =
-//     `${hours}:${minutes}:${seconds}`;
-// }
-
-// function loadWindow(name) {
-//   fetch(`${name}.html`)
-//     .then(res => res.text())
-//     .then(html => {
-//       document.getElementById("windowContainer").innerHTML = html;
-
-//       if (name === "timer") {
-//         updateClock();                 // run once immediately
-//         setInterval(updateClock, 1000); // update every second
-//       }
-//     });
-// }
+document.getElementById("startBtn").addEventListener("click", startTimer);
+document.getElementById("pauseBtn").addEventListener("click", pauseTimer);
+document.getElementById("resetBtn").addEventListener("click", resetTimer);

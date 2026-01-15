@@ -6,6 +6,11 @@
 
 body {
   background-color: #f5f7fa;
+  font-size: Arial, sans-serif;
+}
+
+h1 {
+  font-size: Arial, sans-serif;
 }
 
 html {

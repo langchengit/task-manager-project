@@ -180,6 +180,13 @@ select:focus {
   z-index: -1;
 }
 
+.openbook {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 500px;
+  z-index: -1;
+}
 
 @keyframes leftRight {
   to {

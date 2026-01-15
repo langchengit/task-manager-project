@@ -3,6 +3,38 @@ body {
   background: #f5f7fa;
 }
 
+.title {
+  display: inline-block;
+}
+
+.folder {
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.folder-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #f0f4f8;
+  border-radius: 8px;
+}
+
+.folder-selector,
+.folder-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.folder-selector label {
+  font-weight: 600;
+  min-width: 120px;
+}
+
 .layout {
   display: flex;
   height: 100vh;

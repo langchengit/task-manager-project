@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Course & Task Manager</title>
+  <title>Task Manager</title>
   <link rel="stylesheet" href="styles/nav.css">
   <link rel="stylesheet" href="styles/taskmanager.css" />
 </head>
@@ -19,22 +19,6 @@
 
 <body>
 
-  <!-- <div class="mainNav">
-    <ul>
-      <li>
-        <div class="control">
-          <a href="taskmanager.html">Task Manager</a>
-          <a href="timer.html">Timer</a>
-          <a href="reports.html">Reports</a>
-        </div>
-
-        <div class="account">
-          <a href="">Login</a>
-        </div>
-      </li>
-    </ul>
-  </div> -->
-
   <div id="nav"></div>
   <script src="scripts/nav.js"></script>
 
@@ -42,12 +26,23 @@
 
     <!-- LEFT: Main Content -->
     <div class="main">
-      <h1>My Courses & Projects</h1>
+
+      <div class="folder-controls">
+        <div class="folder-selector">
+          <label for="folderSelect">Current Folder:</label>
+          <select id="folderSelect">
+          </select>
+        </div>
+        <div class="folder-input">
+          <input id="folderInput" placeholder="New semester folder (e.g., Spring 2025)" />
+          <button id="createFolderBtn">Create Folder</button>
+        </div>
+      </div>
 
       <div class="add-course">
         <input id="courseInput" placeholder="Add course or project..." />
         <input id="courseColorInput" type="color" value="#4a90e2">
-        <button onclick="addCourse()">Add</button>
+        <button id="addCourseBtn">Add</button>
       </div>
 
       <div id="courseGallery" class="gallery"></div>
@@ -64,12 +59,12 @@
             <option value="Completed">Completed</option>
           </select>
 
-          <button onclick="addTask()">Add Task</button>
+          <button id="addTaskBtn">Add Task</button>
         </div>
 
         <ul id="taskList"></ul>
 
-        <button class="back-btn" onclick="goBack()">← Back</button>
+        <button class="back-btn" id="backBtn">← Back</button>
       </div>
     </div>
 
@@ -81,6 +76,6 @@
 
   </div>
 
-  <script src="scripts/taskmanager.js"></script>
+  <script src="scripts/taskmanager.js" type="module"></script>
 </body>
 </html>
