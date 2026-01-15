@@ -1,39 +1,88 @@
-.mainNav ul {
-  margin: 0;
-}
-
-.mainNav li {
+/* Navbar container */
+#nav .mainNav {
   display: flex;
-  margin-right: 15px;
   justify-content: space-between;
   align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #1A1A1A, #2C2C2C); /* Dark gradient */
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  font-family: 'Roboto', sans-serif;
+  position: sticky;
+  top: 0;
+  border-radius: 10px;
+  height: 60px;
+  z-index: 1000;
+  margin-top: 15px;
 }
 
-.mainNav .control {
-  width: 30%;
-  display: flex;
-  justify-content: space-around;
+/* Navbar buttons */
+#nav .nav-btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.mainNav .account {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+/* Hover effect: lift + background fade */
+#nav .nav-btn:hover {
+  background-color: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
+
+/* Login button (colored) */
+#nav .login-btn {
+  background-color: #6200EE; /* Material purple */
+  color: white;
+  margin-left: 10px;
+}
+
+#nav .login-btn:hover {
+  background-color: #3700B3;
+}
+
+/* ripple effect */
+#nav .nav-btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.2);
+  opacity: 0;
+  transition: opacity 0.4s, transform 0.4s;
+  border-radius: 6px;
+  transform: scale(0);
+}
+
+#nav .nav-btn:active::after {
+  opacity: 1;
+  transform: scale(2);
+  transition: 0s;
+}
+
+
 
 #logo {
   width: 100px;
   height: 100px;
 }
 
-.mainNav a {
-  background: none;
-  border: none;
-  color: black;
-  cursor: pointer;
-  padding: 10px;
-  border: 1px solid black;
-  font-size: 18px;
-  font-family: Arial, sans-serif;
-  text-decoration: none;
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }

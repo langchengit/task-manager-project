@@ -47,7 +47,6 @@ function startTimer() {
 
   document.body.style.backgroundColor = 'green';
 
-
   interval = setInterval(() => {
     courses[activeCourse].tasks[activeTaskIndex].timeSpent++;
     //add time to timePerDay

@@ -44,14 +44,17 @@ body {
   flex: 3;
   padding: 30px;
   overflow-y: auto;
+  
 }
 
 .sidebar {
   flex: 1;
   padding: 20px;
-  background: #ffffff;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #E0E0E0, #FFFFFF);
   border-left: 1px solid #ddd;
   overflow-y: auto;
+  border-top-left-radius: 15px;
 }
 
 .add-course {
@@ -114,7 +117,7 @@ button {
 #taskList li, 
 #sortedTaskList li {
   position: relative;
-  background: white;
+  background: transparent;
   padding: 10px;
   margin-bottom: 8px;
   border-radius: 5px;
@@ -188,4 +191,33 @@ button {
 
 .delete-task-btn:hover {
   background-color: rgb(255, 0, 0, 0.8);
+}
+
+.folder-controls {
+  background: #F5F5F5 url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+}
+
+#createFolderBtn, #addCourseBtn, #addTaskBtn {
+  background-color: #6200EE;      /* Material purple */
+  color: white;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;             /* Rounded corners */
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s ease;
+}
+
+#createFolderBtn:hover, #addCourseBtn:hover, #addTaskBtn:hover {
+  background-color: #3700B3;      /* Slightly darker purple */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2), 0 6px 12px rgba(0,0,0,0.19);
+  transform: translateY(-2px); 
+}
+
+#createFolderBtn:active, #addCourseBtn:active, #addTaskBtn:active {
+  background-color: #6200EE;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transform: translateY(1px);
 }

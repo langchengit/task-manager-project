@@ -1,22 +1,17 @@
 function loadNav() {
   const navbar = document.getElementById('nav');
   navbar.innerHTML = `
-  <div class="mainNav">
-    <ul>
-      <li>
-        <div class="control">
-          <a href="taskmanager.html">Task Manager</a>
-          <a href="timer.html">Timer</a>
-          <a href="reports.html">Reports</a>
-        </div>
-
-        <div class="account">
-          <a href="login.html">Login</a>
-          <img src="../images/logo.png" id="logo" img>
-        </div>
-      </li>
-    </ul>
-  </div>
+    <div class="mainNav">
+      <div class="nav-left">
+        <a href="taskmanager.html" class="nav-btn">Task Manager</a>
+        <a href="timer.html" class="nav-btn">Timer</a>
+        <a href="reports.html" class="nav-btn">Reports</a>
+      </div>
+      <div class="nav-right">
+        <a href="login.html" class="nav-btn login-btn">Login</a>
+        <img src="../images/logo.png" id="logo" alt="Logo">
+      </div>
+    </div>
   `;
 }
 

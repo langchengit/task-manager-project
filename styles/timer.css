@@ -5,7 +5,8 @@ body {
 
 .timer-page {
   font-family: Arial, sans-serif;
-  min-height: calc(100vh - 43px);
+  min-height: 0;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +28,7 @@ body {
 }
 
 .timer-page h2 {
-  font-size: 42px;
+  font-size: 50px;
   margin: 20px 0;
   letter-spacing: 2px;
 }
@@ -39,7 +40,7 @@ body {
   margin-bottom: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   background-color: #fff;
 }
@@ -56,7 +57,7 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .timer-page button:hover {
