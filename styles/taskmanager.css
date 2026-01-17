@@ -189,6 +189,7 @@ button {
   transition: all 0.3s ease;
 }
 
+
 .delete-task-btn:hover {
   background-color: rgb(255, 0, 0, 0.8);
 }
@@ -197,7 +198,7 @@ button {
   background: #F5F5F5 url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
 }
 
-#createFolderBtn, #addCourseBtn, #addTaskBtn {
+#createFolderBtn, #addCourseBtn, #addTaskBtn, #backBtn {
   background-color: #6200EE;      /* Material purple */
   color: white;
   padding: 12px 28px;
@@ -210,13 +211,13 @@ button {
   transition: all 0.3s ease;
 }
 
-#createFolderBtn:hover, #addCourseBtn:hover, #addTaskBtn:hover {
+#createFolderBtn:hover, #addCourseBtn:hover, #addTaskBtn:hover, #backBtn:hover {
   background-color: #3700B3;      /* Slightly darker purple */
   box-shadow: 0 6px 12px rgba(0,0,0,0.2), 0 6px 12px rgba(0,0,0,0.19);
   transform: translateY(-2px); 
 }
 
-#createFolderBtn:active, #addCourseBtn:active, #addTaskBtn:active {
+#createFolderBtn:active, #addCourseBtn:active, #addTaskBtn:active, #backBtn:active {
   background-color: #6200EE;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transform: translateY(1px);
@@ -225,4 +226,16 @@ button {
 #folderSelect {
  min-width: 200px;
  font-size: 18px;
+}
+
+#taskList li {
+  background: linear-gradient(135deg, #E0E0E0, #FFFFFF);
+  border-radius: 10px;
+  background-color: #00bbd4;
+  list-style: none;
+  line-height: 1.6;
+}
+
+#taskList {
+  padding: 0;
 }

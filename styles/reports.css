@@ -6,13 +6,20 @@
 
 body {
   background-color: #f5f7fa;
-  font-size: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
-  font-size: Arial, sans-serif;
+  font-family: "Permanent Marker", cursive;
 }
 
 html {
   overflow-y: scroll;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
