@@ -1,6 +1,10 @@
 let currentFolder = JSON.parse(localStorage.getItem("currentFolder")) || null;
 let timeSpentEachCourse = {};
-let courses = JSON.parse(localStorage.getItem("folders"))[currentFolder]?.courses || {};
+let courses = {};
+if(currentFolder != null) {
+  courses = JSON.parse(localStorage.getItem("folders"))[currentFolder]?.courses || {};
+}
+let timePerDay = JSON.parse(localStorage.getItem("timePerDay")) || {};
 
 function calculateTimeSpentEachCourse() {
   
@@ -38,6 +42,12 @@ function renderPieChart() {
       times.push(totalTime);
       colors.push(courses[courseName].color || "#4a90e2");
     }
+  }
+
+  if(labels.length === 0) {
+    document.getElementById("noDataMessagePie").classList.remove("hidden");
+    document.getElementById("timePieChart").classList.add("hidden");
+    return;
   }
   
   const ctx = document.getElementById("timePieChart");
@@ -82,5 +92,61 @@ function formatTime(seconds) {
   return `${h}h ${m}m ${s}s`;
 }
 
+function renderLineGraph() {
+
+  if(Object.keys(timePerDay).length === 0) {
+    document.getElementById("noDataMessageLine").classList.remove("hidden");
+    document.getElementById("timeLineGraph").classList.add("hidden");
+    return;
+  }
+
+  const labels = Object.keys(timePerDay);
+  const dataPoints = Object.values(timePerDay);
+  
+  const ctx = document.getElementById("timeLineGraph");
+  console.log(ctx);
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: "Time Spent (seconds)",
+      data: dataPoints,
+      fill: false,
+      borderColor: 'rgb(75, 192, 192)',
+      tension: 0.1, 
+      borderWidth: 3
+    }]
+  };
+
+  new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: {
+      responsive: false,
+      plugins: {
+        legend: {
+          position: "bottom"
+        }
+      }, 
+
+      scales: {
+        x: {
+          offset: true,
+          grid: {
+            display: false
+          }
+        }, 
+        y: {
+          grid: {
+            color: "rgba(0,0,0,0.06)"
+          }
+        }
+      }
+
+    }
+    
+  });
+}
 
 renderPieChart();
+renderLineGraph();

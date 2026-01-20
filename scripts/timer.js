@@ -49,6 +49,7 @@ function startTimer() {
 
   interval = setInterval(() => {
     courses[activeCourse].tasks[activeTaskIndex].timeSpent++;
+    timePerDay[new Date().toISOString().split('T')[0]] = (timePerDay[new Date().toISOString().split('T')[0]] || 0) + 1;
     //add time to timePerDay
     saveData();
     updateDisplay();
@@ -91,6 +92,7 @@ function formatTime(seconds) {
 function saveData() {
   localStorage.setItem("folders", JSON.stringify(folders));
   localStorage.setItem("currentFolder", JSON.stringify(currentFolder));
+  localStorage.setItem("timePerDay", JSON.stringify(timePerDay));
 }
 
 // ---------- Event Listeners ----------

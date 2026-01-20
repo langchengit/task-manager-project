@@ -30,12 +30,14 @@
   <div class="report-grid">
     <div class="piechart">
       <h1>Time Spent on Courses</h1>
+      <div class="no-data-message hidden" id="noDataMessagePie">No time tracking data available.</div>
       <canvas id="timePieChart" width="400" height="400"></canvas>
     </div>
 
     <div class="linegraph">
       <h1>Time Spent per Day</h1>
-      <canvas id="timeLineGraph" width="400" height="400"></canvas>
+      <div class="no-data-message hidden" id="noDataMessageLine">No time tracking data available.</div>
+      <canvas id="timeLineGraph" width="600" height="400"></canvas>
     </div>
   </div>
   
