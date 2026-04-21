@@ -6,6 +6,47 @@ if(currentFolder != null) {
 }
 let timePerDay = JSON.parse(localStorage.getItem("timePerDay")) || {};
 
+// if (!localStorage.getItem("folders")) {
+//   const sampleData = {
+//     "school": {
+//       courses: {
+//         "Math": {
+//           color: "#ff6384",
+//           tasks: [
+//             { name: "Homework 1", timeSpent: 1800 },
+//             { name: "Practice Test", timeSpent: 3600 }
+//           ]
+//         },
+//         "Physics": {
+//           color: "#36a2eb",
+//           tasks: [
+//             { name: "Lab Report", timeSpent: 2400 },
+//             { name: "Review", timeSpent: 1200 }
+//           ]
+//         },
+//         "English": {
+//           color: "#ffce56",
+//           tasks: [
+//             { name: "Essay", timeSpent: 3000 },
+//             { name: "Reading", timeSpent: 1500 }
+//           ]
+//         }
+//       }
+//     }
+//   };
+
+//   const sampleTimePerDay = {
+//     "2026-03-17": 3600,
+//     "2026-03-18": 5400,
+//     "2026-03-19": 4200,
+//     "2026-03-20": 3000,
+//     "2026-03-21": 6000
+//   };
+
+//   localStorage.setItem("folders", JSON.stringify(sampleData));
+//   localStorage.setItem("currentFolder", JSON.stringify("school"));
+//   localStorage.setItem("timePerDay", JSON.stringify(sampleTimePerDay));
+// }
 function calculateTimeSpentEachCourse() {
   
   for(let courseName in courses){

@@ -1,4 +1,8 @@
-let courses = JSON.parse(localStorage.getItem("courses")) || {};
+let currentFolder = JSON.parse(localStorage.getItem("currentFolder")) || null;
+let courses = {};
+if(currentFolder != null) {
+  courses = JSON.parse(localStorage.getItem("folders"))[currentFolder]?.courses || {};
+}
 
 function saveData() {
   localStorage.setItem("courses", JSON.stringify(courses));
